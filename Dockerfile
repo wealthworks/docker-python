@@ -1,4 +1,5 @@
 FROM python:2.7.10
+MAINTAINER Jiangge Zhang <zhangjiangge@licaigc.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
