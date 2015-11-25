@@ -42,3 +42,4 @@ RUN apt-get install -y \
 
 RUN wget -qO- https://www.guihua.com/a/89a9 | tar xvj -C /opt/
 RUN mv /opt/phantomjs-1.9.8-linux-x86_64/ /opt/phantomjs/
+ENV PATH "/opt/phantomjs/bin:$PATH"
