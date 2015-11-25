@@ -22,6 +22,8 @@ RUN apt-get install -y \
     nodejs \
     imagemagick \
     gfortran \
+    redis-tools \
+    mariadb-client \
     libopenblas-dev \
     liblapack-dev \
     libblas-dev \
