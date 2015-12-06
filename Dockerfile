@@ -22,6 +22,7 @@ RUN apt-get install -y \
     nodejs \
     imagemagick \
     gfortran \
+    netcat \
     redis-tools \
     mariadb-client \
     libopenblas-dev \
@@ -38,6 +39,7 @@ RUN apt-get install -y \
     libwebp-dev \
     libxml2-dev \
     libxslt-dev \
+    libcap-dev \
     build-essential
 
 RUN wget -qO- https://www.guihua.com/a/89a9 | tar xvj -C /opt/
