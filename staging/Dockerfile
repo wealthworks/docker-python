@@ -1,16 +1,17 @@
-FROM lcgc/python:2.7.11-base
+FROM lcgc/python:2.7.10-base
 MAINTAINER Eagle Liut <liutao@licaigc.com>
 
 RUN apk --update add \
   build-base \
   ca-certificates \
+  libffi-dev \
   zlib-dev \
   python-dev \
   readline-dev \
   ncurses \
   py-crypto \
-  py-httplib2 \
-  py-mysqldb \
+  postgresql-dev \
+  mariadb-libs \
   py-six \
   libmemcached-dev \
   libsasl \

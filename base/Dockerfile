@@ -1,9 +1,10 @@
-FROM alpine:edge
+FROM alpine:3.2
 MAINTAINER Eagle Liut <liutao@licaigc.com>
 
 # py-virtualenv required: py-pip, python
 RUN apk --update add \
   bash \
+  'python<2.7.11' \
   py-virtualenv \
   && pip install -U pip setuptools \
   && rm -rf /tmp/pip_build_root \
