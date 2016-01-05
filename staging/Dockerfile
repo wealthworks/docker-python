@@ -22,4 +22,11 @@ RUN apk --update add \
   && find /usr/lib/python2.7 -type f -name "*.py?" -delete \
   && rm -rf /var/cache/apk/*
 
+RUN apk --update add \
+  tzdata \
+  && cp /usr/share/zoneinfo/Hongkong /etc/localtime \
+  && echo "Hongkong" >  /etc/timezone \
+  && apk del tzdata \
+  && rm -rf /var/cache/apk/*
+
 CMD ["bash"]
