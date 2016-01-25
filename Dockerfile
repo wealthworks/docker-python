@@ -40,6 +40,9 @@ RUN apt-get install -y \
     libxml2-dev \
     libxslt-dev \
     libcap-dev \
+    libsasl2-dev \
+    libldap2-dev \
+    libssl-dev \
     build-essential
 
 RUN wget -qO- https://www.guihua.com/a/89a9 | tar xvj -C /opt/
