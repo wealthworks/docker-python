@@ -4,17 +4,19 @@ MAINTAINER Eagle Liut <liutao@licaigc.com>
 RUN apk --update add \
   build-base \
   ca-certificates \
-  zlib-dev \
-  python-dev \
-  readline-dev \
   ncurses \
+  nodejs \
+  libmemcached-dev \
+  libsasl \
   py-crypto \
+  py-flask \
   py-httplib2 \
   py-mysqldb \
   py-six \
-  libmemcached-dev \
-  libsasl \
-  nodejs \
+  python-dev \
+  readline-dev \
+  snappy \
+  zlib-dev \
   && pip install -U pip setuptools \
   && rm -rf /tmp/pip_build_root \
   && rm -rf /usr/lib/python2.7/test \
