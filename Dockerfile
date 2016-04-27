@@ -8,8 +8,8 @@ RUN apt-get install -y apt-transport-https
 
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 RUN echo '\
-deb https://deb.nodesource.com/node_4.x jessie main\n\
-deb-src https://deb.nodesource.com/node_4.x jessie main\n\
+deb https://deb.nodesource.com/node_5.x jessie main\n\
+deb-src https://deb.nodesource.com/node_5.x jessie main\n\
 ' > /etc/apt/sources.list.d/nodesource.list
 RUN echo '\
 Package: nodejs\n\
@@ -40,6 +40,9 @@ RUN apt-get install -y \
     libxml2-dev \
     libxslt-dev \
     libcap-dev \
+    libsasl2-dev \
+    libldap2-dev \
+    libssl-dev \
     build-essential
 
 RUN wget -qO- https://www.guihua.com/a/89a9 | tar xvj -C /opt/
