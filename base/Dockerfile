@@ -10,8 +10,3 @@ RUN apk --update add \
   && rm -rf /usr/lib/python2.7/test \
   && find /usr/lib/python2.7 -type f -name "*.py?" -delete \
   && rm -rf /var/cache/apk/*
-
-RUN mkdir /app
-WORKDIR /app
-
-CMD ["bash"]
