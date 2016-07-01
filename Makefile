@@ -18,4 +18,4 @@ solar:
 	docker build -t lcgc/python:$(VERSION)-solar solar/
 
 build:
-	docker build -t lcgc/python:2.7.12-1 .
+	docker build -t lcgc/python:2.7.12-2 .
