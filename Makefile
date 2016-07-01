@@ -1,4 +1,4 @@
-VERSION = 2.7.12
+VERSION = 2.7.11
 
 .PHONY: help staging base solar build
 
@@ -18,4 +18,4 @@ solar:
 	docker build -t lcgc/python:$(VERSION)-solar solar/
 
 build:
-	docker build -t lcgc/python:2.7.12-2 .
+	docker build -t lcgc/python:2.7.12-3 .

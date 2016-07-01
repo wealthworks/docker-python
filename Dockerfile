@@ -32,6 +32,8 @@ RUN apt-get update \
     libatlas-dev \
     librsvg2-dev \
     libmemcached-dev \
+    libmysqlclient-dev \
+    libpq-dev \
     libjpeg-dev \
     libzlcore-dev \
     libtiff5-dev \
