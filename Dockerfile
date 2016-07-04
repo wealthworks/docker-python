@@ -26,6 +26,7 @@ RUN apt-get update \
     graphicsmagick \
     gfortran \
     netcat \
+    cron \
     redis-tools \
     mariadb-client \
     postgresql-client \
