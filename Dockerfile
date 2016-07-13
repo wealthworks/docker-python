@@ -3,8 +3,10 @@ MAINTAINER Liut <liutao@licaigc.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ADD sources.list.jessie.txt /etc/apt/sources.list
+
 RUN apt-get update \
- && apt-get install -y apt-transport-https curl
+ && apt-get install -y --no-install-recommends apt-transport-https curl
 
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - \
  && echo '\
@@ -18,26 +20,28 @@ Pin-Priority: 900\n\
 ' > /etc/apt/preferences.d/nodesource
 
 RUN apt-get update \
- && apt-get install -y \
+ && apt-get install -y --no-install-recommends \
     nodejs \
-    imagemagick \
+    git \
+    graphicsmagick \
     gfortran \
     netcat \
     redis-tools \
     mariadb-client \
     postgresql-client \
+    libffi-dev \
     libopenblas-dev \
     liblapack-dev \
     libblas-dev \
     libatlas-dev \
-    librsvg2-dev \
+    libfreetype6-dev \
     libmemcached-dev \
     libmysqlclient-dev \
     libpq-dev \
     libjpeg-dev \
     libzlcore-dev \
+    librsvg2-dev \
     libtiff5-dev \
-    libfreetype6-dev \
     liblcms2-dev \
     libwebp-dev \
     libxml2-dev \
@@ -52,4 +56,4 @@ RUN curl -s http://cdn.licaigongchang.com/files/phantomjs-2.1.1-linux-x86_64.tar
  && mv /opt/phantomjs-2.1.1-linux-x86_64/ /opt/phantomjs/
 ENV PATH "/opt/phantomjs/bin:$PATH"
 
-RUN pip install virtualenv
+RUN pip install --no-cache-dir virtualenv cryptography
