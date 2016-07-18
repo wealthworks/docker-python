@@ -26,6 +26,7 @@ RUN apt-get update \
     graphicsmagick \
     gfortran \
     netcat \
+    cron \
     redis-tools \
     mariadb-client \
     postgresql-client \
@@ -56,4 +57,5 @@ RUN curl -s http://cdn.licaigongchang.com/files/phantomjs-2.1.1-linux-x86_64.tar
  && mv /opt/phantomjs-2.1.1-linux-x86_64/ /opt/phantomjs/
 ENV PATH "/opt/phantomjs/bin:$PATH"
 
-RUN pip install --no-cache-dir virtualenv cryptography
+RUN pip install --no-cache-dir virtualenv
+RUN pip install --no-use-wheel cryptography
