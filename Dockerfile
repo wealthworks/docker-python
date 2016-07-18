@@ -6,7 +6,9 @@ ENV DEBIAN_FRONTEND noninteractive
 ADD sources.list.jessie.txt /etc/apt/sources.list
 
 RUN apt-get update \
- && apt-get install -y --no-install-recommends apt-transport-https curl
+ && apt-get install -y --no-install-recommends \
+    apt-transport-https \
+    curl
 
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - \
  && echo '\
@@ -20,7 +22,7 @@ Pin-Priority: 900\n\
 ' > /etc/apt/preferences.d/nodesource
 
 RUN apt-get update \
- && apt-get install -y --no-install-recommends \
+ && apt-get install -y --no-install-recommends --fix-missing \
     nodejs \
     git \
     graphicsmagick \
@@ -52,8 +54,10 @@ RUN apt-get update \
     libssl-dev \
     build-essential
 
-RUN curl -s http://cdn.licaigongchang.com/files/phantomjs-2.1.1-linux-x86_64.tar.bz2 | tar xvj -C /opt/ \
- && mv /opt/phantomjs-2.1.1-linux-x86_64/ /opt/phantomjs/
+RUN curl -s http://cdn.licaigongchang.com/files/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar xvj -C /opt/ \
+ && mv /opt/phantomjs-1.9.8-linux-x86_64/ /opt/phantomjs/
+
 ENV PATH "/opt/phantomjs/bin:$PATH"
 
-RUN pip install --no-cache-dir virtualenv cryptography
+ADD pip.conf /etc/pip.conf.custom
+RUN pip install --no-cache-dir --no-binary cryptography virtualenv cryptography
