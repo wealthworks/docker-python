@@ -37,6 +37,7 @@ RUN apt-get update \
     libblas-dev \
     libatlas-dev \
     libfreetype6-dev \
+    libmagickwand-dev \
     libmemcached-dev \
     libmysqlclient-dev \
     libpq-dev \
@@ -54,7 +55,7 @@ RUN apt-get update \
     libssl-dev \
     build-essential
 
-RUN curl -s http://cdn.licaigongchang.com/files/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar xvj -C /opt/ \
+RUN curl -s http://cdn.lcgc.work/files/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar xvj -C /opt/ \
  && mv /opt/phantomjs-1.9.8-linux-x86_64/ /opt/phantomjs/
 
 ENV PATH "/opt/phantomjs/bin:$PATH"
