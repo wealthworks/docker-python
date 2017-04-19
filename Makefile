@@ -18,4 +18,4 @@ solar:
 	docker build -t lcgc/python:$(VERSION)-solar solar/
 
 build:
-	docker build -t lcgc/python:$(VERSION)-r0 .
+	docker build -t lcgc/python:$(VERSION)-r1 .

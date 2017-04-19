@@ -19,11 +19,14 @@ deb-src https://deb.nodesource.com/node_6.x jessie main\n\
 Package: nodejs\n\
 Pin: origin deb.nodesource.com\n\
 Pin-Priority: 900\n\
-' > /etc/apt/preferences.d/nodesource
+' > /etc/apt/preferences.d/nodesource \
+  && curl -s https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+  && echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends --fix-missing \
     nodejs \
+    yarn \
     git \
     graphicsmagick \
     gfortran \
@@ -53,7 +56,8 @@ RUN apt-get update \
     libsasl2-dev \
     libldap2-dev \
     libssl-dev \
-    build-essential
+    build-essential \
+  && apt-get autoremove
 
 RUN curl -s https://cdn.lcgc.work/files/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar xvj -C /opt/ \
  && mv /opt/phantomjs-1.9.8-linux-x86_64/ /opt/phantomjs/
