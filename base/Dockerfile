@@ -7,6 +7,6 @@ RUN apk --update add \
   py-virtualenv \
   && pip install -U pip setuptools \
   && rm -rf /tmp/pip_build_root \
-  && rm -rf /usr/lib/python2.7/test \
+  && rm -rf /usr/lib/python2.7/idlelib/idle_test /usr/lib/python2.7/unittest \
   && find /usr/lib/python2.7 -type f -name "*.py?" -delete \
   && rm -rf /var/cache/apk/*

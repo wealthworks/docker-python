@@ -12,8 +12,8 @@ RUN apt-get update \
 
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - \
  && echo '\
-deb https://deb.nodesource.com/node_5.x jessie main\n\
-deb-src https://deb.nodesource.com/node_5.x jessie main\n\
+deb https://deb.nodesource.com/node_6.x jessie main\n\
+deb-src https://deb.nodesource.com/node_6.x jessie main\n\
 ' > /etc/apt/sources.list.d/nodesource.list \
  && echo '\
 Package: nodejs\n\
